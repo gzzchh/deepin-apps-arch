@@ -17,9 +17,11 @@ install="deepin-wine-qq.install"
 _mirror="https://cdn-package-store6.deepin.com"
 source=("$_mirror/appstore/pool/appstore/c/${debpkgname}/${debpkgname}_${debpkgver}_i386.deb"
   "run.sh"
+  "make-msimg32-native.patch"
   "https://common-1251511762.cos.ap-guangzhou.myqcloud.com/qq-9.4.8-ntr-7.1.2-mod.7z")
 md5sums=('5fdc20e614d945bd2ba5251420872479'
   'fc65fd18be9a56942aaadcdf431a85f8'
+  'cc054d4ad1755c7a52c9f82de6082992'
   'cf44f2090321e692368559800f9daf83')
 
 build() {
@@ -41,6 +43,8 @@ build() {
   #find -L "${srcdir}/deepinqqdir/dosdevices" -maxdepth 1 -type l -delete
   msg "释放 NtrQQ"
   7z x -aoa qq-9.4.8-ntr-7.1.2-mod.7z -o"${srcdir}/deepinqqdir/drive_c/Program Files/Tencent" "QQ/*"
+  msg "注册表补丁 "
+  patch -p1 "${srcdir}/deepinqqdir/user.reg" < "${srcdir}/make-msimg32-native.patch"
   # msg "清理 NtrQQ 多余的东西"
   # rm "${srcdir}/deepinqqdir/drive_c/Program Files/Tencent/QQ/VideoBeautyInstall.exe"
   # rm "${srcdir}/deepinqqdir/drive_c/Program Files/Tencent/QQ/VideoMsgInstall.exe"
