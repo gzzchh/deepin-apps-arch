@@ -19,7 +19,7 @@ source=("$_mirror/appstore/pool/appstore/c/${debpkgname}/${debpkgname}_${debpkgv
   "run.sh"
   "https://common-1251511762.cos.ap-guangzhou.myqcloud.com/qq-9.4.8-ntr-7.1.2-mod.7z")
 md5sums=('5fdc20e614d945bd2ba5251420872479'
-  '24ac0c858d763e56c8919574a1b1b8cd'
+  'fc65fd18be9a56942aaadcdf431a85f8'
   'cf44f2090321e692368559800f9daf83')
 
 build() {
