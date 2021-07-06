@@ -5,7 +5,7 @@
  "usp10"="native,builtin"
  "vcruntime140"="native"
 +"msimg32"="native,builtin"
-+"qprotect"=""
++"qqprotect"=""
  
  [Software\\Wine\\Drivers\\winepulse.drv] 1486366197
  #time=1d2804ad16b6d0c
