@@ -18,11 +18,11 @@ _mirror="https://cdn-package-store6.deepin.com"
 source=("$_mirror/appstore/pool/appstore/c/${debpkgname}/${debpkgname}_${debpkgver}_i386.deb"
   "run.sh"
   "add-dll-override.patch"
-  "https://common-1251511762.cos.ap-guangzhou.myqcloud.com/qq-9.4.9-ntr-7.1.2-mod.7z")
+  "https://common-1251511762.cos.ap-guangzhou.myqcloud.com/ntrqq/qq-9.4.9-ntr-7.1.2-mod.7z")
 md5sums=('5fdc20e614d945bd2ba5251420872479'
   'fc65fd18be9a56942aaadcdf431a85f8'
   '46e8b2d2bd207472626ac7a7c891b6c2'
-  '8e5d69e9513258bac7a19d090db3bcd1')
+  '8dd1e0349db0ef060180789aa5d424a7')
 
 build() {
   msg "Extracting DPKG package ..."
