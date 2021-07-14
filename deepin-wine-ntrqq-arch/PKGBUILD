@@ -2,7 +2,7 @@
 # Maintainer: taotieren <admin@taotieren.com>
 
 pkgname=deepin-wine-ntrqq
-pkgver=9.4.8.27843
+pkgver=9.4.9.27843
 qq_installer=PCQQ2021
 debpkgver=9.3.2deepin20
 debpkgname="com.qq.im.deepin"
@@ -18,11 +18,11 @@ _mirror="https://cdn-package-store6.deepin.com"
 source=("$_mirror/appstore/pool/appstore/c/${debpkgname}/${debpkgname}_${debpkgver}_i386.deb"
   "run.sh"
   "add-dll-override.patch"
-  "https://common-1251511762.cos.ap-guangzhou.myqcloud.com/qq-9.4.8-ntr-7.1.2-mod.7z")
+  "https://common-1251511762.cos.ap-guangzhou.myqcloud.com/qq-9.4.9-ntr-7.1.2-mod.7z")
 md5sums=('5fdc20e614d945bd2ba5251420872479'
   'fc65fd18be9a56942aaadcdf431a85f8'
-  '7879eebf624d3fc6df84958dd02e7363'
-  'cf44f2090321e692368559800f9daf83')
+  '46e8b2d2bd207472626ac7a7c891b6c2'
+  '8e5d69e9513258bac7a19d090db3bcd1')
 
 build() {
   msg "Extracting DPKG package ..."
@@ -42,7 +42,7 @@ build() {
   # install -m644 "${srcdir}/${qq_installer}-${pkgver}.exe" "${srcdir}/deepinqqdir/drive_c/Program Files/Tencent/"
   #find -L "${srcdir}/deepinqqdir/dosdevices" -maxdepth 1 -type l -delete
   msg "释放 NtrQQ"
-  7z x -aoa qq-9.4.8-ntr-7.1.2-mod.7z -o"${srcdir}/deepinqqdir/drive_c/Program Files/Tencent" "QQ/*"
+  7z x -aoa qq-9.4.9-ntr-7.1.2-mod.7z -o"${srcdir}/deepinqqdir/drive_c/Program Files/Tencent" "QQ/*"
   msg "注册表补丁 "
   patch -p1 "${srcdir}/deepinqqdir/user.reg" < "${srcdir}/add-dll-override.patch"
   # msg "清理 NtrQQ 多余的东西"
